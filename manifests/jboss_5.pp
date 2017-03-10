@@ -29,11 +29,13 @@ class jboss::jboss_5 {
   }
 
   download_uncompress { 'install_jboss_5':
-    distribution_name => 'jboss-5.1.0.GA-jdk6.zip',
+    download_base_url => 'http://sourceforge.net/projects/jboss/files/JBoss/JBoss-5.1.0.GA/',
+    distribution_name => 'jboss-5.1.0.GA-jdk6.zip/download',
     dest_folder       => '/opt',
     creates           => '/opt/jboss-5.1.0.GA',
     uncompress        => 'zip',
     user              => jboss,
     group             => jboss,
   }
+  
 }
